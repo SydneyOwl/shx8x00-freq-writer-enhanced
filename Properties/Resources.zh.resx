@@ -456,8 +456,8 @@ macOS:
     <data name="copy" xml:space="preserve">
         <value>复制</value>
     </data>
-    <data name="paste" xml:space="preserve">
-        <value>粘贴</value>
+    <data name="paste_override" xml:space="preserve">
+        <value>粘贴(覆盖)</value>
     </data>
     <data name="clear_sel_chan" xml:space="preserve">
         <value>清空选中的信道</value>
@@ -836,5 +836,8 @@ macOS:
     </data>
     <data name="reset" xml:space="preserve">
         <value>重置</value>
+    </data>
+    <data name="paste_insert" xml:space="preserve">
+        <value>粘贴(插入)</value>
     </data>
 </root>

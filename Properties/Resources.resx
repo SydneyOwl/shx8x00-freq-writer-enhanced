@@ -461,8 +461,8 @@ Click the drop-down menu and select the option that includes "cu," for example: 
     <data name="cut" xml:space="preserve">
         <value>Cut</value>
     </data>
-    <data name="paste" xml:space="preserve">
-        <value>Paste</value>
+    <data name="paste_override" xml:space="preserve">
+        <value>Paste(override)</value>
     </data>
     <data name="clear_sel_chan" xml:space="preserve">
         <value>Clear selected channel</value>
@@ -835,5 +835,8 @@ Click the drop-down menu and select the option that includes "cu," for example: 
     </data>
     <data name="reset" xml:space="preserve">
         <value>Reset</value>
+    </data>
+    <data name="paste_insert" xml:space="preserve">
+        <value>Paste(insert)</value>
     </data>
 </root>

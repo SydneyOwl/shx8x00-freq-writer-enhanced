@@ -203,7 +203,8 @@
                     <ContextMenu>
                         <MenuItem Header="{x:Static p:Resources.copy}" Click="MenuCopyChannel_OnClick" />
                         <MenuItem Header="{x:Static p:Resources.cut}" Click="MenuCutChannel_OnClick" />
-                        <MenuItem Header="{x:Static p:Resources.paste}" Click="MenuPasteChannel_OnClick" />
+                        <MenuItem Header="{x:Static p:Resources.paste_insert}" Click="MenuInsertPasteChannel_OnClick" />
+                        <MenuItem Header="{x:Static p:Resources.paste_override}" Click="MenuPasteChannel_OnClick" />
                         <MenuItem Header="{x:Static p:Resources.clear_sel_chan}" Click="MenuClrChannel_OnClick" />
                         <MenuItem Header="{x:Static p:Resources.del_chan}" Click="MenuDelChannel_OnClick" />
                         <MenuItem Header="{x:Static p:Resources.ins_chan}" Click="MenuInsChannel_OnClick" />

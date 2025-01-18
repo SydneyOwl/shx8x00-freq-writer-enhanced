@@ -885,9 +885,9 @@ namespace SenhaixFreqWriter.Properties {
             }
         }
         
-        public static string paste {
+        public static string paste_override {
             get {
-                return ResourceManager.GetString("paste", resourceCulture);
+                return ResourceManager.GetString("paste_override", resourceCulture);
             }
         }
         
@@ -1644,6 +1644,12 @@ namespace SenhaixFreqWriter.Properties {
         public static string reset {
             get {
                 return ResourceManager.GetString("reset", resourceCulture);
+            }
+        }
+        
+        public static string paste_insert {
+            get {
+                return ResourceManager.GetString("paste_insert", resourceCulture);
             }
         }
     }

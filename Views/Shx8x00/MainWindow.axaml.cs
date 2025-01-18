@@ -391,10 +391,51 @@ public partial class MainWindow : Window
         CalcSequence();
     }
 
-    private void MenuPasteChannel_OnClick(object? sender, RoutedEventArgs e)
+    private void MenuOverridePasteChannel_OnClick(object? sender, RoutedEventArgs e)
     {
         if (_tmpChannel.Count == 0) return;
         var selected = channelDataGrid.SelectedIndex;
+        for (var i = 0; i < _tmpChannel.Count; i++) ListItems[selected + i] = _tmpChannel[i].DeepCopy();
+        CalcSequence();
+
+
+        // if (_tmpChannel == null) return;
+        // var selected = channelDataGrid.SelectedIndex;
+        // ListItems[selected] = _tmpChannel.DeepCopy();
+        // CalcSequence();
+    }
+    
+    // 插入空信道并粘贴
+    private void MenuInsertPasteChannel_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (_tmpChannel.Count == 0)
+        {
+            return;
+        }
+
+        var selected = channelDataGrid.SelectedIndex;
+        // 检查后n项是否为空，并整体后移
+        for (var i = 0; i < _tmpChannel.Count; i++)
+        {
+            if (!ListItems[127 - i].AllEmpty())
+            {
+                MessageBoxManager.GetMessageBoxStandard("注意", $"后{_tmpChannel.Count}个信道不全为空，粘贴将覆盖数据，请使用粘贴（覆盖）！").ShowWindowDialogAsync(this);
+                return;
+            }
+        }
+        
+        var lastEmp = 0;
+        for (var i = 0; i < 127; i++)
+        {
+            if (!ListItems[i].AllEmpty())
+            {
+                lastEmp = i;
+            }
+        }
+
+        for (var i = lastEmp; i > selected; i--) ListItems[i + _tmpChannel.Count] = ListItems[i];
+        // 移动完成！
+        
         for (var i = 0; i < _tmpChannel.Count; i++) ListItems[selected + i] = _tmpChannel[i].DeepCopy();
         CalcSequence();
 
